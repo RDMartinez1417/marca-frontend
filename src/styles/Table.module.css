@@ -1,0 +1,89 @@
+/* styles/Table.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+.newButton {
+  background: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.newButton:hover {
+  background: #0056b3;
+}
+
+.tableWrap {
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.table thead th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    background: rgba(17, 24, 39, 0.25);
+}
+
+.table tbody tr:hover {
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 28px 16px;
+}
+
+.edit {
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    color: #bfdbfe;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.edit:hover {
+    background: rgba(37, 99, 235, 0.25);
+}
+
+.delete {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fecaca;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.delete:hover {
+    background: rgba(239, 68, 68, 0.22);
+}

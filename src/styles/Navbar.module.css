@@ -1,0 +1,49 @@
+/* styles/navbar.module.css */
+.navbar {
+  display: flex; /* 1. Usa Flexbox para alinear los elementos */
+  justify-content: space-between; /* 2. Mueve los elementos a los extremos */
+  align-items: center; /* 3. Centra los elementos verticalmente */
+  padding: 1rem 2rem;
+  background-color: #0d1a29; /* Color de fondo oscuro */
+  color: #fff; /* Color del texto */
+  border-bottom: 1px solid #1a2a3a;
+}
+
+.navbar__logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c0c0c0; /* Un gris claro para el texto */
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espacio entre los elementos de la derecha */
+}
+
+.navbar__actions a {
+  color: #c0c0c0;
+  text-decoration: none; /* Elimina el subrayado por defecto */
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar__actions a:hover {
+  color: #fff; /* Cambio de color al pasar el ratón */
+}
+
+.navbar__new-record {
+  background-color: #007bff; /* Un azul para el botón */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar__new-record:hover {
+  background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+}
