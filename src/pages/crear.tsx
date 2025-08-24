@@ -1,4 +1,3 @@
-// pages/crear.tsx
 import Layout from '../components/Layout';
 import MarcaWizard from '../components/MarcaWizard';
 

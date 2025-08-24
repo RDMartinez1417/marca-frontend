@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto CRUD de Marcas - Frontend
 
-## Getting Started
+Este es el frontend del proyecto de prueba técnica para desarrollador FullStack.  
+Está desarrollado con **Next.js**, **React** y **TypeScript**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Requisitos previos
+- Asegúrate de tener instalado Node.js y un gestor de paquetes como npm o yarn.
+---
+
+## ⚙️ Guía de Inicio Rápido
+Sigue estos pasos para poner el proyecto en funcionamiento en tu máquina local.
+
+### 1. Clonar el repositorio
+``` bash
+git clone https://github.com/RDMartinez1417/marca-frontend.git
+cd marca-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instalar dependencias
+``` bash
+npm install
+# o
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Iniciar el servidor de desarrollo
+``` bash
+npm run dev
+# o
+yarn dev
+```
+La aplicación estará disponible en **http://localhost:3000.**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Librerías utilizadas
 
-## Learn More
+### Dependencias principales
+- **next** (`15.5.0`) → Framework de React para aplicaciones web con SSR y SSG.  
+- **react** (`19.1.0`) → Biblioteca principal para construir interfaces de usuario.  
+- **react-dom** (`19.1.0`) → Renderizado de React en el DOM.  
+- **axios** (`^1.11.0`) → Cliente HTTP para consumir APIs.  
+- **date-fns** (`^4.1.0`) → Utilidades para manipulación de fechas en JavaScript/TypeScript.  
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Dependencias de desarrollo
+- **typescript** (`^5`) → Soporte de TypeScript en el proyecto.  
+- **eslint** (`^9`) → Linter para mantener un código limpio y consistente.  
+- **eslint-config-next** (`15.5.0`) → Configuración de ESLint optimizada para proyectos Next.js.  
+- **@eslint/eslintrc** (`^3`) → Utilidad para manejar configuraciones de ESLint.  
+- **@types/node** (`^20`) → Tipos de TypeScript para Node.js.  
+- **@types/react** (`^19`) → Tipos de TypeScript para React.  
+- **@types/react-dom** (`^19`) → Tipos de TypeScript para React DOM.

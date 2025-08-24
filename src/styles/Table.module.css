@@ -1,19 +1,40 @@
-/* styles/Table.module.css */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--border);
 }
 
 .header h2 {
-    margin: 0;
-    font-size: 18px;
-    letter-spacing: 0.3px;
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.3px;
 }
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.auditToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.auditToggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
 .newButton {
-  background: #007bff;
+  background: var(--accent);
   color: white;
   padding: 10px 18px;
   border-radius: 6px;
@@ -25,65 +46,65 @@
 }
 
 .newButton:hover {
-  background: #0056b3;
+  background: var(--accent-hover);
 }
 
 .tableWrap {
-    overflow: auto;
+  overflow: auto;
 }
 
 .table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .table th,
 .table td {
-    text-align: left;
-    padding: 14px 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .table thead th {
-    color: var(--muted);
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    background: rgba(17, 24, 39, 0.25);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: var(--bg);
 }
 
 .table tbody tr:hover {
-    background: rgba(37, 99, 235, 0.06);
+  background: rgba(37, 99, 235, 0.06);
 }
 
 .empty {
-    text-align: center;
-    color: var(--muted);
-    padding: 28px 16px;
+  text-align: center;
+  color: var(--muted);
+  padding: 28px 16px;
 }
 
 .edit {
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.35);
-    color: #bfdbfe;
-    padding: 8px 10px;
-    border-radius: 8px;
+  background: white;
+  border: 1px solid #44C67E;
+  color: #44C67E;
+  padding: 8px 10px;
+  border-radius: 8px;
 }
 
 .edit:hover {
-    background: rgba(37, 99, 235, 0.25);
+  background: rgba(96, 176, 121, 0.2);
 }
 
 .delete {
-    background: rgba(239, 68, 68, 0.12);
-    border: 1px solid rgba(239, 68, 68, 0.35);
-    color: #fecaca;
-    padding: 8px 10px;
-    border-radius: 8px;
+  background: white;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 10px;
+  border-radius: 8px;
 }
 
 .delete:hover {
-    background: rgba(239, 68, 68, 0.22);
+  background: rgba(181, 18, 18, 0.2);
 }

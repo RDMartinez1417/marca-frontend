@@ -1,15 +1,15 @@
-/* styles/globals.css */
 :root {
-  --bg: #0f172a;
-  --panel: #111827;
-  --muted: #94a3b8;
-  --text: #e5e7eb;
-  --accent: #2563eb;
-  --accent-600: #1d4ed8;
-  --danger: #ef4444;
+  --bg: #FDFDFD;
+  --panel: #FDFDFD;
+  --muted: #000000;
+  --text: #000000;
+  --accent: #ef4444;
+  --accent-hover: #dc2626;
+  --danger: #dc2626;
   --success: #22c55e;
-  --border: #1f2937;
+  --border: #000000;
 }
+
 
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ body,
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-  background: linear-gradient(120deg, #0b1220, #0f172a 35%, #0b1220 80%);
+  background: white;
   color: var(--text);
 }
 
@@ -40,7 +40,7 @@ button {
 
 input,
 select {
-  background: #0b1220;
+  background: white;
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -52,6 +52,7 @@ label {
   color: var(--muted);
   display: block;
   margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .container {
@@ -62,13 +63,10 @@ label {
 }
 
 .card {
-  background: radial-gradient(1000px 400px at 20% -10%, rgba(37, 99, 235, 0.15), transparent 35%),
-    radial-gradient(800px 300px at 90% -5%, rgba(37, 99, 235, 0.1), transparent 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--panel);
+  border: 2px solid var(--border);
   border-radius: 16px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tableActions {
@@ -80,7 +78,7 @@ label {
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 }
 
 .badge.success {
@@ -90,15 +88,15 @@ label {
 }
 
 .badge.warn {
-  background: rgba(234, 179, 8, 0.12);
-  color: #fde68a;
-  border-color: rgba(234, 179, 8, 0.3);
+  color: #c3aa47;
+  background: rgb(225 173 13 / 12%);
+  border-color: rgb(227 175 13 / 30%);
 }
 
 .badge.muted {
-  background: rgba(148, 163, 184, 0.12);
-  color: #cbd5e1;
-  border-color: rgba(148, 163, 184, 0.3);
+  color: #767c85;
+  background: rgb(99 102 106 / 12%);
+  border-color: rgb(60 63 68 / 30%);
 }
 
 .pagination {
@@ -110,15 +108,70 @@ label {
 }
 
 .pagination button {
-  background-color: #1e40af;
+  background-color: var(--accent);
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+  background-color: var(--accent-hover);
 }
 
 .pagination button:disabled {
   background-color: #3f3f46;
   cursor: not-allowed;
+}
+
+
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-panel input,
+.filter-panel select {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 12px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 6px;
+  color: black;
+  font-size: 1rem;
+  appearance: none;
+}
+
+.filter-panel input::placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+.filter-panel input:focus,
+.filter-panel select:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px rgba(187, 10, 69, 0.3);
+}
+
+.filter-panel select {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23c0c0c0"%3E%3Cpath fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.2rem;
+  padding-right: 2.5rem;
+}
+
+.filter-panel input:hover,
+.filter-panel select:hover {
+  border-color: var(--accent);
 }

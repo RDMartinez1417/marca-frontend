@@ -1,16 +1,12 @@
-/* styles/Layout.module.css */
-/* Mantener la estructura principal del Layout con display: flex */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* El header y el footer no cambian mucho, puedes mantenerlos */
 .header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--border);
+  background: var(--panel);
   padding: 14px 24px;
   display: flex;
   justify-content: space-between;
@@ -19,6 +15,7 @@
   top: 0;
   z-index: 10;
 }
+
 .brand {
   display: flex;
   align-items: center;
@@ -27,19 +24,23 @@
   letter-spacing: 0.3px;
   color: var(--text);
 }
+
 .logo {
-  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .sep {
   color: var(--muted);
 }
+
 .nav {
   display: flex;
   gap: 14px;
 }
+
 .primaryBtn {
   background: var(--accent);
   color: white;
@@ -47,49 +48,50 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .primaryBtn:hover {
   background: var(--accent-600);
 }
+
 .footer {
   padding: 24px;
-  color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--accent);
+  border-top: 2px solid var(--border)
 }
 
-/* ------------------------------------------- */
-/* NUEVOS ESTILOS PARA LA BARRA LATERAL Y EL CONTENIDO PRINCIPAL */
-/* ------------------------------------------- */
 .mainContentWrapper {
   display: flex;
   flex: 1;
-  background-color: #0c1524;
+  background-color: var(--bg);
 }
+
 .toggleButton {
   background: none;
   border: none;
-  color: white;
+  color: black;
   font-size: 1.5rem;
   cursor: pointer;
   margin-right: 10px;
 }
+
 .sidebar {
- width: 250px;
+  width: 250px;
   min-width: 250px;
   padding: 1rem;
-  background-color: #1a2a3a;
-  color: #fff;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.3s ease-in-out; /* Animación de transición */
+  background-color: var(--panel);
+  color: var(--text);
+  border-right: 2px solid var(--border);
+  transition: all 0.3s ease-in-out;
 }
+
 .sidebarHidden {
-   width: 0;
+  width: 0;
   min-width: 0;
   padding: 0;
   overflow: hidden;
   border-right: none;
 }
 
-/* ⬅️ Estilos para que el mainContentWrapper ocupe el 100% del ancho */
 .mainContentWrapperFull {
   grid-template-columns: 1fr;
 }
@@ -101,7 +103,7 @@
 .sidebarTitle {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #60a5fa; /* Un color de acento para los títulos */
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
@@ -120,7 +122,7 @@
 .sidebarLink {
   display: block;
   padding: 0.75rem 1rem;
-  color: #c0c0c0;
+  color: black;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.2s;
@@ -128,11 +130,11 @@
 }
 
 .sidebarLink:hover {
-  background-color: #2a3a4a;
+  background-color: var(--accent-hover);
 }
 
 .main {
-  flex: 1; /* Permite que el contenido principal ocupe el resto del espacio */
+  flex: 1;
   padding: 2rem;
   overflow-y: auto;
   transition: all 0.3s ease-in-out;

@@ -1,4 +1,3 @@
-// pages/editar/[id].tsx
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';

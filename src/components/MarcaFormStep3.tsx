@@ -1,4 +1,3 @@
-// components/MarcaFormStep3.tsx
 import styles from '../styles/Wizard.module.css';
 import type { Marca } from '../types/brand';
 

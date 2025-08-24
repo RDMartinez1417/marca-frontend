@@ -1,4 +1,3 @@
-// components/Layout.tsx
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from '../styles/Layout.module.css';
@@ -6,7 +5,7 @@ import { ReactNode, useState } from 'react';
 
 export default function Layout({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // ⬅️ Estado para controlar el sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const getPageTitle = (pathname: string): string => {
     switch (pathname) {
@@ -16,11 +15,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         return 'Panel';
       case '/crear':
         return 'Crear Marca';
-      // Puedes añadir más casos según las rutas que tengas
       case '/editar/[id]':
         return 'Editar Marca';
       default:
-        return 'Registro de Marca'; // Título por defecto
+        return 'Registro de Marca';
     }
   };
 
@@ -36,10 +34,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           <span className={styles.sep}>/</span>
           <span>{pageTitle}</span> 
         </div>
-        {/*  <nav className={styles.nav}>
-          <Link href="/">Dashboard</Link>
-          <Link href="/crear" className={styles.primaryBtn}>Nuevo registro</Link>
-        </nav> */}
       </header>
       <div className={`${styles.mainContentWrapper} ${isSidebarOpen ? '' : styles.mainContentWrapperFull}`}>
         <aside className={`${styles.sidebar} ${isSidebarOpen ? '' : styles.sidebarHidden}`}>
@@ -68,7 +62,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         <main className={styles.main}>{children}</main>
       </div>
-      <footer className={styles.footer}>© {new Date().getFullYear()} SIGNA</footer>
+      <footer className={styles.footer}>© {new Date().getFullYear()} SIGNA Todos los derechos reservados.</footer>
     </div>
   );
 }
