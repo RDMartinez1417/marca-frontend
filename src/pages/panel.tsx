@@ -50,7 +50,7 @@ const Panel = () => {
                         <p>Marcas Pendientes</p>
                     </div>
                     <div className={styles.statCard}>
-                        <h2>{counts.Inactivo}</h2>
+                        <h2>{counts.Inactivo || 0}</h2>
                         <p>Marcas Inactivas</p>
                     </div>
                 </div>
