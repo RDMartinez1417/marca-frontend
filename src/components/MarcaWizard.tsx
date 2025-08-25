@@ -6,6 +6,7 @@ import MarcaFormStep2 from './MarcaFormStep2';
 import MarcaFormStep3 from './MarcaFormStep3';
 import { createMarca, getCategories, getCountries, updateMarca } from '../services/brandService';
 import styles from '../styles/Wizard.module.css';
+import axios from 'axios';
 
 type Props = {
   mode: 'create' | 'edit';
@@ -48,18 +49,22 @@ export default function MarcaWizard({ mode, initialData, id }: Props) {
         await updateMarca(id, data);
       }
       router.push('/');
-    } catch (e: any) {
-      if (e.response && e.response.data && e.response.data.detail) {
-        const errorDetail = e.response.data.detail;
-        if (Array.isArray(errorDetail)) {
-          const errorMessages = errorDetail.map(err => {
-            const field = err.loc[1];
-            const message = err.msg;
-            return `Campo "${field}": ${message}`;
-          });
-          setError(errorMessages.join(' | '));
+    } catch (e: unknown) {
+      if (axios.isAxiosError(e)) {
+        if (e.response && e.response.data && e.response.data.detail) {
+          const errorDetail = e.response.data.detail;
+          if (Array.isArray(errorDetail)) {
+            const errorMessages = errorDetail.map(err => {
+              const field = err.loc[1];
+              const message = err.msg;
+              return `Campo "${field}": ${message}`;
+            });
+            setError(errorMessages.join(' | '));
+          } else {
+            setError(errorDetail);
+          }
         } else {
-          setError(errorDetail);
+          setError('Error inesperado al guardar la información. Por favor, inténtalo de nuevo.');
         }
       } else {
         setError('Error inesperado al guardar la información. Por favor, inténtalo de nuevo.');
@@ -80,10 +85,10 @@ export default function MarcaWizard({ mode, initialData, id }: Props) {
       {error && <div className={styles.error}>{error}</div>}
 
       {step === 1 && (
-        <MarcaFormStep1 value={data} onChange={patch} onNext={() => setStep(2)} countries={countries}/>
+        <MarcaFormStep1 value={data} onChange={patch} onNext={() => setStep(2)} countries={countries} />
       )}
       {step === 2 && (
-        <MarcaFormStep2 value={data} onChange={patch} onPrev={() => setStep(1)} onNext={() => setStep(3)} categories={categories}/>
+        <MarcaFormStep2 value={data} onChange={patch} onPrev={() => setStep(1)} onNext={() => setStep(3)} categories={categories} />
       )}
       {step === 3 && (
         <MarcaFormStep3 value={data} onPrev={() => setStep(2)} onSubmit={submit} submitting={saving} mode={mode} />
